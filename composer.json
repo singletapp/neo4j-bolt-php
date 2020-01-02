@@ -10,12 +10,16 @@
         }
     ],
     "require": {
-        "php": ">= 5.6",
-        "ext-bcmath": "*",
-        "ext-mbstring": "*",
-        "symfony/event-dispatcher": "^2.7|^3.0|^4.0",
+        "php": "^7.2.5",
+        "ext-ctype": "*",
+        "ext-iconv": "*",
         "graphaware/neo4j-common": "^3.4",
         "myclabs/php-enum": "^1.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8",
+        "symfony/stopwatch": "^5.1@dev",
+        "behat/behat": "~3.0.4"
     },
     "autoload": {
       "psr-4": {
@@ -27,10 +31,17 @@
             "GraphAware\\Bolt\\Tests\\": "tests/"
         }
     },
-    "require-dev": {
-        "phpunit/phpunit": "^4.8",
-        "symfony/stopwatch": "^2.7",
-        "behat/behat": "~3.0.4"
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "5.0.*"
+        }
     },
     "minimum-stability": "dev"
 }
